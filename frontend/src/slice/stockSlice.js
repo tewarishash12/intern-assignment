@@ -5,7 +5,7 @@ export const fetchStocks = createAsyncThunk(
     'stock/fetchStocks',
     async () => {
         try {
-            const response = await axios.get('http://localhost:3000/api/stocks');
+            const response = await axios.get('https://intern-assignment-ltvc.onrender.com/api/stocks');
             return response.data;
         } catch (error) {
             throw new Error(error.response?.data?.message || 'Failed to fetch stocks');
@@ -18,7 +18,7 @@ export const pollStockData = createAsyncThunk(
     async ({ id, duration }) => {
         try {
             const response = await axios.post(
-                `http://localhost:3000/api/stocks/${id}`,
+                `https://intern-assignment-ltvc.onrender.com/api/stocks/${id}`,
                 { duration },
                 {
                     headers: { 'Content-Type': 'application/json' },
