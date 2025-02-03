@@ -33,7 +33,7 @@ A responsive single-page frontend application that dynamically updates stock gra
 
 ### 1. Clone the Repository
 ```sh
-git clone https://github.com/your-repo/stock-graph-viewer.git
+git clone https://github.com/tewarishash12/intern-assignment.git
 ```
 
 ### 2. Install Dependencies
