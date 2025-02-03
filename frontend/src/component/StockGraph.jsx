@@ -22,9 +22,9 @@ const StockGraph = () => {
             dispatch(pollStockData({ id: selectedStockId, duration }));
         }
     }, [selectedStockId, duration, dispatch]);
-    console.log(stockData.data)
 
-    const chartData = {
+    // Prepare separate chart data for Stock Price and Price Change
+    const stockPriceData = {
         labels: stockData?.data?.map(item => new Date(item.timestamp).toLocaleDateString()),
         datasets: [
             {
@@ -34,6 +34,12 @@ const StockGraph = () => {
                 tension: 0.1,
                 fill: false,
             },
+        ],
+    };
+
+    const priceChangeData = {
+        labels: stockData?.data?.map(item => new Date(item.timestamp).toLocaleDateString()),
+        datasets: [
             {
                 label: "Price Change",
                 data: stockData?.data?.map(item => item.change),
@@ -91,7 +97,29 @@ const StockGraph = () => {
 
             {!loading && !error && stockData?.data?.length > 0 && (
                 <div className="my-6">
-                    <Line data={chartData} />
+                    {/* Stock Price Graph */}
+                    <div className="my-4 w-full" style={{ height: "400px" }}>
+                        <h3 className="text-xl font-semibold mb-2">Stock Price</h3>
+                        <Line
+                            data={stockPriceData}
+                            options={{
+                                responsive: true,
+                                maintainAspectRatio: false,
+                            }}
+                        />
+                    </div>
+
+                    {/* Price Change Graph */}
+                    <div className="my-8 w-full" style={{ height: "400px" }}>
+                        <h3 className="text-xl font-semibold mb-2">Price Change</h3>
+                        <Line
+                            data={priceChangeData}
+                            options={{
+                                responsive: true,
+                                maintainAspectRatio: false,
+                            }}
+                        />
+                    </div>
                 </div>
             )}
 
