@@ -68,9 +68,6 @@ The application fetches stock data dynamically from the provided API, updating t
 ## Deployment
 For deployment, consider using services like Vercel, Netlify (for frontend), and Render or Heroku (for backend).
 
-## License
-This project is licensed under the MIT License.
-
 ---
 ### Contributors
 - **Shashwat Tewari** - [GitHub](https://github.com/tewarishash12)
