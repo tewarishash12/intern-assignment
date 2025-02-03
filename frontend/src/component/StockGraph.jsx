@@ -23,7 +23,6 @@ const StockGraph = () => {
         }
     }, [selectedStockId, duration, dispatch]);
 
-    // Prepare separate chart data for Stock Price and Price Change
     const stockPriceData = {
         labels: stockData?.data?.map(item => new Date(item.timestamp).toLocaleDateString()),
         datasets: [
@@ -36,6 +35,7 @@ const StockGraph = () => {
             },
         ],
     };
+    console.log(stockData.data)
 
     const priceChangeData = {
         labels: stockData?.data?.map(item => new Date(item.timestamp).toLocaleDateString()),
@@ -97,7 +97,6 @@ const StockGraph = () => {
 
             {!loading && !error && stockData?.data?.length > 0 && (
                 <div className="my-6">
-                    {/* Stock Price Graph */}
                     <div className="my-4 w-full" style={{ height: "400px" }}>
                         <h3 className="text-xl font-semibold mb-2">Stock Price</h3>
                         <Line
@@ -109,7 +108,6 @@ const StockGraph = () => {
                         />
                     </div>
 
-                    {/* Price Change Graph */}
                     <div className="my-8 w-full" style={{ height: "400px" }}>
                         <h3 className="text-xl font-semibold mb-2">Price Change</h3>
                         <Line
@@ -123,9 +121,38 @@ const StockGraph = () => {
                 </div>
             )}
 
-            {!loading && !error && stockData?.data?.length === 0 && (
-                <div className="text-center text-gray-500 dark:text-gray-300">No Data Available</div>
-            )}
+            <div className="overflow-x-auto mt-4">
+                <table className="min-w-full border-collapse border border-gray-200">
+                    <thead>
+                        <tr className="bg-gray-100">
+                            <th className="border border-gray-300 px-4 py-2">Timestamp</th>
+                            <th className="border border-gray-300 px-4 py-2">Price</th>
+                            <th className="border border-gray-300 px-4 py-2">Change</th>
+                            <th className="border border-gray-300 px-4 py-2">Change %</th>
+                            <th className="border border-gray-300 px-4 py-2">Volume</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {stockData?.data?.length > 0 ? (
+                            stockData.data.map((stock, index) => (
+                                <tr key={index} className="text-center">
+                                    <td className="border border-gray-300 px-4 py-2">{stock.timestamp}</td>
+                                    <td className="border border-gray-300 px-4 py-2">${stock.price.toFixed(2)}</td>
+                                    <td className="border border-gray-300 px-4 py-2">{stock.change}</td>
+                                    <td className="border border-gray-300 px-4 py-2">{stock.change_percent}%</td>
+                                    <td className="border border-gray-300 px-4 py-2">{stock.volume}</td>
+                                </tr>
+                            ))
+                        ) : (
+                            <tr>
+                                <td colSpan="5" className="text-center text-gray-500 p-4">
+                                    No data available for the selected stock.
+                                </td>
+                            </tr>
+                        )}
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 };
