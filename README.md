@@ -53,14 +53,12 @@ npm install
 #### Start the Frontend
 ```sh
 cd frontend
-npm i
 npm run dev
 ```
 
 #### Start the Backend
 ```sh
 cd backend
-npm i
 npm start
 ```
 
