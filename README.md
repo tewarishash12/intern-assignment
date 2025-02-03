@@ -2,6 +2,9 @@
 
 A responsive single-page frontend application that dynamically updates stock graphs using a given API. The project adheres to the requirements of using Redux Toolkit for state management, thunk for API calls, and pre-built UI libraries for a clean and modern interface.
 
+## Video Demonstration
+[Watch the Demo](https://drive.google.com/file/d/1VI80Ko-E3H0Se9A7xV8aAzi1rm5yYss-/view?usp=sharing)
+
 ## Features
 
 ✅ **Stock Selection Dropdown** - Users can select a stock from a dropdown list.  
@@ -31,7 +34,6 @@ A responsive single-page frontend application that dynamically updates stock gra
 ### 1. Clone the Repository
 ```sh
 git clone https://github.com/your-repo/stock-graph-viewer.git
-cd stock-graph-viewer
 ```
 
 ### 2. Install Dependencies
@@ -51,12 +53,14 @@ npm install
 #### Start the Frontend
 ```sh
 cd frontend
+npm i
 npm run dev
 ```
 
 #### Start the Backend
 ```sh
 cd backend
+npm i
 npm start
 ```
 
@@ -71,5 +75,5 @@ This project is licensed under the MIT License.
 
 ---
 ### Contributors
-- **Shashwat Tewari** - [GitHub](https://github.com/shashwat-tewari)
+- **Shashwat Tewari** - [GitHub](https://github.com/tewarishash12)
 
