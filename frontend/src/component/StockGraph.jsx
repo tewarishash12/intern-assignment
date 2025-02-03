@@ -22,7 +22,6 @@ const StockGraph = () => {
             dispatch(pollStockData({ id: selectedStockId, duration }));
         }
     }, [selectedStockId, duration, dispatch]);
-    console.log(stockData.data)
 
     const chartData = {
         labels: stockData?.data?.map(item => new Date(item.timestamp).toLocaleDateString()),
@@ -47,7 +46,7 @@ const StockGraph = () => {
     const selectedStockMeta = stocks.find((stock) => stock.id === selectedStockId);
 
     return (
-        <div className="max-w-4xl mx-auto p-6 bg-white dark:bg-gray-200 shadow-lg rounded-lg">
+        <div className="max-w-full mx-auto p-4 sm:p-6 bg-white dark:bg-gray-200 shadow-lg rounded-lg">
             {loading && (
                 <div className="flex justify-center items-center py-10">
                     <div className="w-16 h-16 border-t-4 border-blue-500 border-solid rounded-full animate-spin"></div>
@@ -90,8 +89,12 @@ const StockGraph = () => {
             )}
 
             {!loading && !error && stockData?.data?.length > 0 && (
-                <div className="my-6">
-                    <Line data={chartData} />
+                <div className="my-6 w-full">
+                    {/* Make the chart responsive by adding w-full */}
+                    <Line data={chartData} options={{
+                        responsive: true,
+                        maintainAspectRatio: false, // Ensures that it resizes properly
+                    }} />
                 </div>
             )}
 
