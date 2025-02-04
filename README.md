@@ -3,7 +3,7 @@
 A responsive single-page frontend application that dynamically updates stock graphs using a given API. The project adheres to the requirements of using Redux Toolkit for state management, thunk for API calls, and pre-built UI libraries for a clean and modern interface.
 
 ## Video Demonstration
-To watch the demonstration: [Click Here]([https://youtu.be/YF7SP6S_lYM](https://drive.google.com/file/d/1VI80Ko-E3H0Se9A7xV8aAzi1rm5yYss-/view?usp=sharing))
+To watch the demonstration: [Click Here](https://drive.google.com/file/d/1VI80Ko-E3H0Se9A7xV8aAzi1rm5yYss-/view?usp=sharing)
 
 ## Features
 
