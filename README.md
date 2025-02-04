@@ -3,7 +3,7 @@
 A responsive single-page frontend application that dynamically updates stock graphs using a given API. The project adheres to the requirements of using Redux Toolkit for state management, thunk for API calls, and pre-built UI libraries for a clean and modern interface.
 
 ## Video Demonstration
-[Watch the Demo](https://drive.google.com/file/d/1VI80Ko-E3H0Se9A7xV8aAzi1rm5yYss-/view?usp=sharing)
+To watch the demonstration: [Click Here](https://youtu.be/YF7SP6S_lYM)
 
 ## Features
 
@@ -13,7 +13,7 @@ A responsive single-page frontend application that dynamically updates stock gra
 ✅ **Responsive UI** - The application is fully responsive and adapts to different screen sizes.  
 ✅ **Redux Toolkit for State Management** - Ensures efficient global state management.  
 ✅ **Minimal Prop Drilling** - Props are not drilled beyond level 2.  
-✅ **Pre-built Libraries** - Uses UI libraries like MUI and react-chartjs-2 for better design and performance.  
+✅ **Pre-built Libraries** - Uses UI libraries react-chartjs-2 for better design and performance.  
 ✅ **Data Table** - Displays detailed stock information including timestamp, price, change, percentage change, and volume.  
 
 ## Bonus Features (Brownie Points)
